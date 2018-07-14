@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/third"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.activitys.InputNameActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:showIn="@layout/activity_input_name">
+
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="233dp"
+        android:background="@android:color/background_dark"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textColorHighlight="@android:color/holo_blue_bright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/chooseName"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/background_dark"
+        android:onClick="onNameChangeClicked"
+        android:text="@string/Choose"
+        android:textColor="@android:color/holo_blue_bright"
+        app:layout_constraintEnd_toEndOf="@+id/inputName"
+        app:layout_constraintStart_toStartOf="@+id/inputName"
+        app:layout_constraintTop_toBottomOf="@+id/inputName" />
+</android.support.constraint.ConstraintLayout>

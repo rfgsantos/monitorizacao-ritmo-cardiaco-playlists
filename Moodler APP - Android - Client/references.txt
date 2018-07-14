@@ -1,0 +1,16 @@
+-Spotify Player
+https://spotify.github.io/android-sdk/player/com/spotify/sdk/android/player/SpotifyPlayer.html
+
+-Spotify APK tutorial:
+https://developer.spotify.com/technologies/spotify-android-sdk/tutorial/
+
+-Spotify sdk LIB
+https://spotify.github.io/android-sdk/player/
+
+-Python endpoint server - FLASK
+https://www.youtube.com/watch?v=CjYKrbq8BCw
+
+-Python MySQL connector
+https://dev.mysql.com/doc/connector-python-example-cursor-select.html
+how to install: python -m pip install mysql-connector - > se der erros, instalar
+microsoft c++ 9.0 for python 

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Moodler</string>
+    <string name="play">Play</string>
+    <string name="stop">Pause</string>
+    <string name="Next">Next</string>
+    <string name="Previous">Previous</string>
+    <string name="Volume">Volume: </string>
+    <string name="SpotifyUri">Uri </string>
+    <string name="Gosto">Like </string>
+    <string name="NGosto">Dislike </string>
+    <string name="title_activity_input_name">InputNameActivity</string>
+    <string name="Choose">Choose Name</string>
+    <string name="LogOut">LogOut</string>
+    <string name="ChangeUser">Change User</string>
+
+    <string name="instructions_text">First scan for BLE devices and then connect to it by clicking it on the list. Next Player will open!</string>
+
+    <string name="scan">Scan</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_connect_sensor">ConnectSensor</string>
+
+
+    <string name="user">User: </string>
+    <string name="musica">Musica: </string>
+    <string name="album">Album: </string>
+    <string name="artista">Artista: </string>
+
+
+    <string name="moodlerInstructions1">O Moodler pretende a criação de playlists dinâmicas através da monitorização dos valores do seu ritmo cardiaco.</string>
+
+    <string name="moodlerInstructions2">A criação destas listas está diretamente relacionada com o acesso a música, para este efeito a conexão a uma plataforma
+        de musicas torna-se um requisito obrigatório, sendo que o objetivo final do Moodler é um simples plugin incorporável em qualquer uma das plataformas exitentes</string>
+
+    <string name="moodlerInstructions3">Posto este cenário,o Moodler será dividido e duas versões académica terá algumas funcionalidades desativadas
+        pelo simples facto de não ser possivel a incorporação como plugin.</string>
+
+    <string name="moodlerInstructions4">Esta aquisição de valores isolada, sem qualquer tipo de tratamento não nos garante fiabilidade na escolha das músicas para essas mesmas playlists.</string>
+
+    <string name="moodlerInstructions5">Uma simples extração de componentes dos valores adquitidos permitirá o calculo do HRV que nada mais édo que a variabilidade do seu ritmo cardiaco
+        enquanto escuta uma música, mais concretamente, associar este valor a uma avaliação de gosto ou não gosto</string>
+
+    <string name="moodlerInstructions6">por parte do utilizador criando assim um banco de dados para mais tarde,
+        o algoritmo de machine learning ter um banco de dados para se treinar e assim sugerir musicas parecidas c
+        com as que foram classificadas como gosto e com o HRV respetivo.</string>
+
+    <string name="moodlerInstructions7">Este será o objetivo principal da versão académica do Moodler</string>
+
+    <string name="moodlerInstructions8">A versão comercial terá estes aspectos em conta mas com uma nova funcionalidade
+        o estabeleciomento de um mood, dando liberdade ao utilizador</string>
+
+    <string name="moodlerInstructions9">na escolha de caracteristicas que deseja na música, tais como:
+        vivacidade, instrumentalidade,acústica, valência e muitas outras...</string>
+
+</resources>
