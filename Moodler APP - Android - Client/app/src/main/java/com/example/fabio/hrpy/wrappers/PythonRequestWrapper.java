@@ -14,18 +14,21 @@ public class PythonRequestWrapper {
     private String userId;
     private String artistURI;
     private String trackURI;
+    private String user_evaluation;
 
-    public PythonRequestWrapper(ArrayList<String> hrv, String token, String userId, String artistuURI, String trackURI){
+    public PythonRequestWrapper(ArrayList<String> hrv, String token, String userId, String artistuURI, String trackURI, String user_evaluation){
         this.hrv = hrv;
         this.token = token;
         this.userId = userId;
         this.artistURI = artistuURI;
         this.trackURI = trackURI;
+        this.user_evaluation = user_evaluation;
     }
 
     public JSONObject toJson() throws JSONException {
         JSONObject jsonWrapper = new JSONObject();
         jsonWrapper.put("hrv", Arrays.toString(hrv.toArray()));
+        jsonWrapper.put("user_evaluation", user_evaluation);
         jsonWrapper.put("userId", userId);
         jsonWrapper.put("artistURI",artistURI);
         jsonWrapper.put("playlistId","4kdDdyx5HqER1wQJl50AY8");

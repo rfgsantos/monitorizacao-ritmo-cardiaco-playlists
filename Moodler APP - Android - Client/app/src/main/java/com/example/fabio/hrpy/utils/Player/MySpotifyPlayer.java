@@ -59,12 +59,16 @@ public class MySpotifyPlayer implements
     private boolean train;
     private String token;
 
+    private String currentTrackUri;
+    private String currentArtistUti;
+
+
     public void myLogIn(Activity myActivity){
         AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(
                 Globals.CLIENT_ID.getValue(),
                 AuthenticationResponse.Type.TOKEN,
                 Globals.REDIRECT_URI.getValue());
-        builder.setScopes(new String[]{"user-read-private", "streaming", "playlist-modify-public"});
+        builder.setScopes(new String[]{"user-read-private", "streaming", "playlist-modify-public", "playlist-modify-private"});
         AuthenticationRequest request = builder.build();
 
         AuthenticationClient.openLoginActivity(myActivity, ActivityRequestCode.REQUEST_CODE.getCode(), request);
@@ -108,6 +112,11 @@ public class MySpotifyPlayer implements
         this.train = train;
     }
 
+    private void fillDataForPython(){
+        this.currentArtistUti = mPlayer.getMetadata().currentTrack.artistUri;
+        this.currentTrackUri = mPlayer.getMetadata().currentTrack.uri;
+    }
+
     private void fillData(){
         track = getCurrentTrack();
         musica.setText(track);
@@ -129,16 +138,17 @@ public class MySpotifyPlayer implements
         boolean evaluation;
         switch (playerEvent) {
             case kSpPlaybackNotifyMetadataChanged:
+                fillDataForPython();
                 fillData();
                 break;
             case kSpPlaybackNotifyTrackDelivered:
                 if(train) {
                     evaluation = (FeedBack.likeCounter < 0) ? false : true;
                     fdb.write(new UserData(user, track, artist, evaluation, hrv, getUri().toString()));
-                }
-                else{
+                }else{
                     Log.d("Mytag","Send Request to python with hr");
-                    new PythonServerConnection().makeRequest(new PythonRequestWrapper(getHrv(),getToken(),getUserId(),mPlayer.getMetadata().currentTrack.artistUri, mPlayer.getMetadata().currentTrack.uri));
+                    String user_evaluation = (FeedBack.likeCounter < 0) ? "0" : "1";
+                    new PythonServerConnection().makeRequest(new PythonRequestWrapper(getHrv(),getToken(),getUserId(),currentArtistUti, currentTrackUri,user_evaluation));
                 }
                 break;
             case kSpPlaybackNotifyAudioDeliveryDone:
@@ -184,7 +194,6 @@ public class MySpotifyPlayer implements
                 try {
                     final JSONObject jsonObject = new JSONObject(response.body().string());
                     userId = jsonObject.getString("id");
-                    new PythonServerConnection().makeRequest(new PythonRequestWrapper(getHrv(),getToken(),getUserId(),"uri_teste", "teste_track"));
                 } catch (JSONException e) {
                     Log.d("failed", "Failed to parse data: " + e);
                 }
